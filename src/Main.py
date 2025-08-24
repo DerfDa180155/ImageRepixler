@@ -9,7 +9,12 @@ class main:
         self.run()
 
     def run(self):
-        pass
+
+        colors = ""
+        image = ""
+
+        self.imagerepixler.loadColors(colors)
+        self.imagerepixler.loadImage(image)
 
 
 if __name__ == "__main__":
