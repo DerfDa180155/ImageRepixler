@@ -2,9 +2,13 @@ import numpy
 
 class ImageRepixler:
     def __init__(self):
-        pass
+        self.colors = []
+
+    def reset(self):
+        self.colors = []
 
     def loadColors(self, path):
+        self.colors = []
         pass
 
     def loadImage(self, path):
