@@ -11,13 +11,17 @@ class main:
 
     def run(self):
         colorFileName = "colors.txt"
-
-        for subdir, dirs, files in os.walk('./'):
-            for file in files:
-                print(file)
-
-        colors = ""
+        colors = []
         image = ""
+
+        with open(colorFileName) as colorsFile:
+            line = colorsFile.readline()
+            while line != "":
+                colors.append(line.replace("\n", ""))
+                line = colorsFile.readline()
+
+        print(colors)
+
 
         self.imagerepixler.loadColors(colors)
         self.imagerepixler.loadImage(image)
