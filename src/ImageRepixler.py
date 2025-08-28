@@ -7,9 +7,14 @@ class ImageRepixler:
     def reset(self):
         self.colors = []
 
-    def loadColors(self, path):
+    def loadColors(self, fileName):
         self.colors = []
-        pass
+        with open(fileName) as colorsFile:
+            line = colorsFile.readline()
+            while line != "":
+                self.colors.append(line.replace("\n", ""))
+                line = colorsFile.readline()
+
 
     def loadImage(self, path):
         pass

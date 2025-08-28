@@ -11,20 +11,13 @@ class main:
 
     def run(self):
         colorFileName = "colors.txt"
-        colors = []
-        image = ""
-
-        with open(colorFileName) as colorsFile:
-            line = colorsFile.readline()
-            while line != "":
-                colors.append(line.replace("\n", ""))
-                line = colorsFile.readline()
-
-        print(colors)
+        imageFileName = ""
 
 
-        self.imagerepixler.loadColors(colors)
-        self.imagerepixler.loadImage(image)
+        self.imagerepixler.loadColors(colorFileName)
+        self.imagerepixler.loadImage(imageFileName)
+
+        print(self.imagerepixler.colors)
 
 
 if __name__ == "__main__":
