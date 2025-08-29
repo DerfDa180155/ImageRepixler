@@ -12,9 +12,10 @@ class ImageRepixler:
         with open(fileName) as colorsFile:
             line = colorsFile.readline()
             while line != "":
-                self.colors.append(line.replace("\n", ""))
+                line = line.replace("(", "").replace(")", "").replace("\n", "")
+                temp = line.split(",")
+                self.colors.append((int(temp[0]), int(temp[1]), int(temp[2])))
                 line = colorsFile.readline()
-
 
     def loadImage(self, path):
         pass
