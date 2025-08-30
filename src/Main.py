@@ -11,7 +11,7 @@ class main:
 
     def run(self):
         colorFileName = "colors.txt"
-        imageFileName = ""
+        imageFileName = "testImage.png"
 
 
         self.imagerepixler.loadColors(colorFileName)

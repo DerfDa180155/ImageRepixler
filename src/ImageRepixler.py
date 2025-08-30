@@ -1,11 +1,14 @@
-import numpy
+import numpy as np
+from PIL import Image
 
 class ImageRepixler:
     def __init__(self):
         self.colors = []
+        self.imageArray = []
 
     def reset(self):
         self.colors = []
+        self.imageArray = []
 
     def loadColors(self, fileName):
         self.colors = []
@@ -17,8 +20,9 @@ class ImageRepixler:
                 self.colors.append((int(temp[0]), int(temp[1]), int(temp[2])))
                 line = colorsFile.readline()
 
-    def loadImage(self, path):
-        pass
+    def loadImage(self, fileName):
+        image = Image.open(fileName)
+        self.imageArray = np.array(image)
 
     def repixel(self):
         pass
