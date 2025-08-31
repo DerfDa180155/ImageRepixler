@@ -25,4 +25,15 @@ class ImageRepixler:
         self.imageArray = np.array(image)
 
     def repixel(self):
+        x = 0
+        y = 0
+        while x <= len(self.imageArray):
+            y = 0
+            while y <= len(self.imageArray[x]):
+                self.newColor(self.imageArray[x][y])
+                y += 1
+            x += 1
+
+    def newColor(self, oldColor):
         pass
+
