@@ -27,13 +27,13 @@ class ImageRepixler:
     def repixel(self):
         x = 0
         y = 0
-        while x <= len(self.imageArray):
+        while x < len(self.imageArray):
             y = 0
-            while y <= len(self.imageArray[x]):
-                self.newColor(self.imageArray[x][y])
+            while y < len(self.imageArray[x]):
+                self.imageArray[x][y] = self.newColor(self.imageArray[x][y])
                 y += 1
             x += 1
 
     def newColor(self, oldColor):
-        pass
+        return self.colors[0]
 
