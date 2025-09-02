@@ -18,6 +18,7 @@ class main:
         self.imagerepixler.loadImage(imageFileName)
 
         self.imagerepixler.repixel()
+        self.imagerepixler.saveImage()
 
         print(self.imagerepixler.colors)
         print(self.imagerepixler.imageArray)

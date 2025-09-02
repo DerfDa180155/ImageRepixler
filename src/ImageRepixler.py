@@ -24,6 +24,10 @@ class ImageRepixler:
         image = Image.open(fileName)
         self.imageArray = np.array(image)
 
+    def saveImage(self):
+        image = Image.fromarray(self.imageArray)
+        image.save("Test.png")
+
     def repixel(self):
         x = 0
         y = 0
