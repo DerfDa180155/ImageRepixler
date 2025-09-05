@@ -6,11 +6,13 @@ class ImageRepixler:
         self.colors = []
         self.colorsAvg = []
         self.imageArray = []
+        self.imageFile = ""
 
     def reset(self):
         self.colors = []
         self.colorsAvg = []
         self.imageArray = []
+        self.imageFile = ""
 
     def loadColors(self, fileName):
         self.colors = []
@@ -26,12 +28,16 @@ class ImageRepixler:
             self.colorsAvg.append((color[0]+color[1]+color[2])/3)
 
     def loadImage(self, fileName):
+        self.imageFile = fileName
         image = Image.open(fileName)
         self.imageArray = np.array(image)
 
-    def saveImage(self):
+    def saveImage(self, sameFile = False):
         image = Image.fromarray(self.imageArray)
-        image.save("Test.png")
+        if sameFile:
+            image.save(self.imageFile)
+        else:
+            image.save("Test.png")
 
     def repixel(self):
         x = 0
