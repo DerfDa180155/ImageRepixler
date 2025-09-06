@@ -20,7 +20,6 @@ class main:
         self.imagerepixler.repixel()
         self.imagerepixler.saveImage()
 
-        print(self.imagerepixler.colors)
         print(self.imagerepixler.imageArray)
 
 

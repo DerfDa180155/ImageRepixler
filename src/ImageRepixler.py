@@ -65,3 +65,11 @@ class ImageRepixler:
 
         return returnColor
 
+    def rgbToLab(self, rgbColor):
+        r = rgbColor[0] / 255
+        g = rgbColor[1] / 255
+        b = rgbColor[2] / 255
+
+
+
+
