@@ -93,5 +93,8 @@ class ImageRepixler:
         y = y * 100
         z = z * 100
 
+        xn = 95.047
+        yn = 100.0
+        zn = 108.883
 
 
