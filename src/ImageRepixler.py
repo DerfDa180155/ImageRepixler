@@ -97,4 +97,23 @@ class ImageRepixler:
         yn = 100.0
         zn = 108.883
 
+        temp = x / xn
+        if temp > 0.008856:
+            fx = temp ** (1 / 3)
+        else:
+            fx = 7.787 * temp + 16 / 116
+
+        temp = y / yn
+        if temp > 0.008856:
+            fy = temp ** (1 / 3)
+        else:
+            fy = 7.787 * temp + 16 / 116
+
+        temp = z / zn
+        if temp > 0.008856:
+            fz = temp ** (1 / 3)
+        else:
+            fz = 7.787 * temp + 16 / 116
+
+
 
