@@ -115,5 +115,9 @@ class ImageRepixler:
         else:
             fz = 7.787 * temp + 16 / 116
 
+        L = (116 * fy) - 16
+        a = 500 * (fx - fy)
+        b = 200 * (fy - fz)
 
+        return (L, a, b)
 
