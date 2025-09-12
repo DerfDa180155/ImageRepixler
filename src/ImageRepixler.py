@@ -4,13 +4,13 @@ from PIL import Image
 class ImageRepixler:
     def __init__(self):
         self.colors = []
-        self.colorsAvg = []
+        self.colorsLab = []
         self.imageArray = []
         self.imageFile = ""
 
     def reset(self):
         self.colors = []
-        self.colorsAvg = []
+        self.colorsLab = []
         self.imageArray = []
         self.imageFile = ""
 
@@ -25,7 +25,7 @@ class ImageRepixler:
                 line = colorsFile.readline()
 
         for color in self.colors:
-            self.colorsAvg.append((color[0]+color[1]+color[2])/3)
+            self.colorsLab.append(self.rgbToLab(color))
 
     def loadImage(self, fileName):
         self.imageFile = fileName
@@ -53,10 +53,10 @@ class ImageRepixler:
         oldColorAvg = (oldColor[0]+oldColor[1]+oldColor[2])/3
 
         returnColor = self.colors[0]
-        currentAvg = np.abs(oldColorAvg-self.colorsAvg[0])
+        currentAvg = np.abs(oldColorAvg-self.colorsLab[0])
 
         count = 0
-        for newAvg in self.colorsAvg:
+        for newAvg in self.colorsLab:
             temp = np.abs(oldColorAvg-newAvg)
             if temp < currentAvg:
                 returnColor = self.colors[count]

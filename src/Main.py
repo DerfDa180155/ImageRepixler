@@ -17,10 +17,9 @@ class main:
         self.imagerepixler.loadColors(colorFileName)
         self.imagerepixler.loadImage(imageFileName)
 
-        self.imagerepixler.repixel()
-        self.imagerepixler.saveImage()
+        #self.imagerepixler.repixel()
+        #self.imagerepixler.saveImage()
 
-        print(self.imagerepixler.imageArray)
 
 
 if __name__ == "__main__":
