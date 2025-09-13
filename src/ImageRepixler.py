@@ -121,3 +121,6 @@ class ImageRepixler:
 
         return (L, a, b)
 
+    def calcDif(self, color1, color2):
+        return np.sqrt(np.power(color1[0]-color2[0], 2) + np.power(color1[1]-color2[1], 2) + np.power(color1[2]-color2[2], 2))
+
