@@ -17,8 +17,8 @@ class main:
         self.imagerepixler.loadColors(colorFileName)
         self.imagerepixler.loadImage(imageFileName)
 
-        #self.imagerepixler.repixel()
-        #self.imagerepixler.saveImage()
+        self.imagerepixler.repixel()
+        self.imagerepixler.saveImage()
 
 
 

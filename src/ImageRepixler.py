@@ -50,17 +50,17 @@ class ImageRepixler:
             x += 1
 
     def newColor(self, oldColor):
-        oldColorAvg = (oldColor[0]+oldColor[1]+oldColor[2])/3
+        oldColorLab = self.rgbToLab(oldColor)
 
         returnColor = self.colors[0]
-        currentAvg = np.abs(oldColorAvg-self.colorsLab[0])
+        currentDif = self.calcDif(oldColorLab, self.colorsLab[0])
 
         count = 0
-        for newAvg in self.colorsLab:
-            temp = np.abs(oldColorAvg-newAvg)
-            if temp < currentAvg:
+        for newLab in self.colorsLab:
+            temp = self.calcDif(oldColorLab, newLab)
+            if temp < currentDif:
                 returnColor = self.colors[count]
-                currentAvg = temp
+                currentDif = temp
             count += 1
 
         return returnColor
