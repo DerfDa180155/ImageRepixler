@@ -14,8 +14,9 @@ class ImageRepixler:
         self.imageArray = []
         self.imageFile = ""
 
-    def loadColors(self, fileName):
-        self.colors = []
+    def loadColors(self, fileName, append=False):
+        if not append:
+            self.colors = []
         with open(fileName) as colorsFile:
             line = colorsFile.readline()
             while line != "":
