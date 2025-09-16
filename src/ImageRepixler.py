@@ -51,6 +51,9 @@ class ImageRepixler:
             x += 1
 
     def newColor(self, oldColor):
+        if oldColor in self.colors:
+            return oldColor
+
         oldColorLab = self.rgbToLab(oldColor)
 
         returnColor = self.colors[0]
