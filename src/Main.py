@@ -6,20 +6,51 @@ import ImageRepixler
 
 class main:
     def __init__(self):
+        pygame.init()
+        pygame.display.init()
+
+        pygame.display.gl_set_attribute(pygame.GL_ACCELERATED_VISUAL, 0)
+        pygame.display.gl_set_attribute(pygame.GL_DOUBLEBUFFER, 1)
+
+        self.windowWidth = 1500
+        self.windowHeight = 1500
+
+        self.screen = pygame.display.set_mode((self.windowWidth, self.windowHeight), pygame.RESIZABLE | pygame.GL_DOUBLEBUFFER)
+        pygame.display.set_caption("Image Repixler by David Derflinger")
+
+        self.clock = pygame.time.Clock()
+        self.running = True
+
         self.imagerepixler = ImageRepixler.ImageRepixler()
+
         self.run()
 
     def run(self):
-        colorFileName = "colors.txt"
-        imageFileName = "testImage.png"
+        while self.running:
+            for event in pygame.event.get():
+                if event.type == pygame.QUIT: # Quit the Game
+                    self.running = False
+                elif event.type == pygame.KEYDOWN:
+                    if event.key == pygame.K_ESCAPE: # Quit the Game
+                        self.running = False
+
+            self.windowWidth = self.screen.get_width()
+            self.windowHeight = self.screen.get_height()
+
+            self.screen.fill((50, 50, 50))
 
 
-        self.imagerepixler.loadColors(colorFileName)
-        self.imagerepixler.loadImage(imageFileName)
+            colorFileName = "colors.txt"
+            imageFileName = "testImage.png"
 
-        self.imagerepixler.repixel()
-        self.imagerepixler.saveImage()
+            #self.imagerepixler.loadColors(colorFileName)
+            #self.imagerepixler.loadImage(imageFileName)
 
+            #self.imagerepixler.repixel()
+            #self.imagerepixler.saveImage()
+
+            pygame.display.flip()
+            self.clock.tick(60)
 
 
 if __name__ == "__main__":
