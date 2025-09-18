@@ -2,6 +2,7 @@ import pygame
 import os
 
 import ImageRepixler
+import Button
 
 
 class main:
@@ -23,6 +24,8 @@ class main:
 
         self.imagerepixler = ImageRepixler.ImageRepixler()
 
+        self.buttons = [Button.Button(self.screen,100,100,20,20,(255,255,255), "test")]
+
         self.run()
 
     def run(self):
@@ -40,6 +43,10 @@ class main:
             self.screen.fill((50, 50, 50))
 
 
+
+
+
+
             colorFileName = "colors.txt"
             imageFileName = "testImage.png"
 
@@ -48,6 +55,9 @@ class main:
 
             #self.imagerepixler.repixel()
             #self.imagerepixler.saveImage()
+
+            for button in self.buttons:
+                button.draw()
 
             pygame.display.flip()
             self.clock.tick(60)
