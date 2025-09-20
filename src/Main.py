@@ -24,7 +24,9 @@ class main:
 
         self.imagerepixler = ImageRepixler.ImageRepixler()
 
-        self.buttons = [Button.Button(self.screen,100,100,200,200,(255,255,255), "test")]
+        self.buttons = []
+        self.buttons.append(Button.Button(self.screen,100,100,200,200,(255,255,255), "loadColor"))
+        self.buttons.append(Button.Button(self.screen,100,400,200,200,(255,255,255), "repixel"))
 
         self.run()
 
@@ -69,7 +71,6 @@ class main:
                 button.hover(mx, my)
                 button.clicked(mx, my, mousePressedUp)
                 button.draw()
-
 
                 if button.isleftClicked:
                     print(button.onClick)
