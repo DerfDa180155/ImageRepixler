@@ -73,7 +73,11 @@ class main:
                 button.draw()
 
                 if button.isleftClicked:
-                    print(button.onClick)
+                    match button.onClick:
+                        case "loadColor":
+                            self.imagerepixler.loadColors(colorFileName)
+                        case "repixel":
+                            self.imagerepixler.repixel()
 
 
             pygame.display.flip()
