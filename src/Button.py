@@ -1,13 +1,14 @@
 import pygame
 
 class Button:
-    def __init__(self, screen, x, y, width, height, color, onClick):
+    def __init__(self, screen, x, y, width, height, color, displayText, onClick):
         self.screen = screen
         self.x = x
         self.y = y
         self.width = width
         self.height = height
         self.color = color
+        self.displayText = displayText
         self.onClick = onClick
 
         self.isHovered = False
