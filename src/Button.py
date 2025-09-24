@@ -1,7 +1,7 @@
 import pygame
 
 class Button:
-    def __init__(self, screen, x, y, width, height, color, displayText, onClick):
+    def __init__(self, screen, x, y, width, height, color, displayText, displayTextColor, displayTextSize, onClick):
         self.screen = screen
         self.x = x
         self.y = y
@@ -9,6 +9,8 @@ class Button:
         self.height = height
         self.color = color
         self.displayText = displayText
+        self.displayTextColor = displayTextColor
+        self.displayTextSize = displayTextSize
         self.onClick = onClick
 
         self.isHovered = False
@@ -19,10 +21,10 @@ class Button:
     def draw(self):
         pygame.draw.rect(self.screen, self.color, (self.x, self.y, self.width, self.height))
 
-        font = pygame.font.Font(pygame.font.get_default_font(), 20)
+        font = pygame.font.Font(pygame.font.get_default_font(), self.displayTextSize)
 
 
-        text = font.render(self.displayText, True, (255, 0, 255))
+        text = font.render(self.displayText, True, self.displayTextColor)
         newRect = text.get_rect()
         newRect.center = (self.x+(self.width/2),self.y+(self.height/2),)
         self.screen.blit(text, newRect)
