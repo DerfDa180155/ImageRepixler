@@ -55,12 +55,15 @@ class main:
 
             oldMousePressed = mousePressed
 
-            font = pygame.font.Font(pygame.font.get_default_font(), 50)
+            size = 50
+            color = (255, 255, 255)
 
-            text = font.render("Image Repixler", True, (255, 255, 255))
+            font = pygame.font.Font(pygame.font.get_default_font(), size)
+
+            text = font.render("Image Repixler", True, color)
             newRect = text.get_rect()
             newRect.centerx = self.windowWidth / 2
-            newRect.y = 50
+            newRect.y = size
             self.screen.blit(text, newRect)
 
 
