@@ -25,8 +25,9 @@ class main:
         self.imagerepixler = ImageRepixler.ImageRepixler()
 
         self.buttons = []
-        self.buttons.append(Button.Button(self.screen,100,100,200,200,(255,255,255), "load Colors", (255,0,255), 20, "loadColor"))
-        self.buttons.append(Button.Button(self.screen,100,400,200,200,(255,255,255), "Repixel",(255,0,255), 20, "repixel"))
+        self.buttons.append(Button.Button(self.screen,100,100,150,150,(255,255,255), "Load Colors", (255,0,255), 20, "loadColor"))
+        self.buttons.append(Button.Button(self.screen,100,400,150,150,(255,255,255), "Repixel",(255,0,255), 20, "repixel"))
+        self.buttons.append(Button.Button(self.screen,100,700,150,150,(255,255,255), "Reset Colors",(255,0,255), 20, "resetColor"))
 
         self.run()
 
