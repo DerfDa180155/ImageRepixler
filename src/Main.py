@@ -26,9 +26,10 @@ class main:
 
         self.buttons = []
         self.buttons.append(Button.Button(self.screen,100,100,150,150,(255,255,255), "Load Colors", (255,0,255), 20, "loadColor"))
-        self.buttons.append(Button.Button(self.screen,100,400,150,150,(255,255,255), "Repixel",(255,0,255), 20, "repixel"))
+        self.buttons.append(Button.Button(self.screen,100,400,150,150,(255,255,255), "Start Repixel",(255,0,255), 20, "repixel"))
         self.buttons.append(Button.Button(self.screen,100,700,150,150,(255,255,255), "Reset Colors",(255,0,255), 20, "resetColor"))
         self.buttons.append(Button.Button(self.screen,100,1000,150,150,(255,255,255), "Load Image",(255,0,255), 20, "loadImage"))
+        self.buttons.append(Button.Button(self.screen,100,1300,150,150,(255,255,255), "Set Images Path",(255,0,255), 20, "setImagesPath"))
 
         self.run()
 
