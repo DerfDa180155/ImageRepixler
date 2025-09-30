@@ -90,6 +90,12 @@ class main:
                             self.imagerepixler.loadColors(colorFileName)
                         case "repixel":
                             self.imagerepixler.repixel()
+                        case "resetColor":
+                            self.imagerepixler.reset()
+                        case "loadImage":
+                            self.imagerepixler.loadImage(imageFileName)
+                        case "setImagesPath":
+                            break
 
 
             pygame.display.flip()
