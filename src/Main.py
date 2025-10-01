@@ -23,6 +23,7 @@ class main:
         self.running = True
 
         self.imagerepixler = ImageRepixler.ImageRepixler()
+        self.imagesPath = ""
 
         self.buttons = []
         self.buttons.append(Button.Button(self.screen,100,100,150,150,(255,255,255), "Load Colors", (255,0,255), 20, "loadColor"))
@@ -95,7 +96,7 @@ class main:
                         case "loadImage":
                             self.imagerepixler.loadImage(imageFileName)
                         case "setImagesPath":
-                            break
+                            self.imagesPath = ""
 
 
             pygame.display.flip()
