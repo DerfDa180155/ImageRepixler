@@ -26,7 +26,7 @@ class Button:
 
         text = font.render(self.displayText, True, self.displayTextColor)
         newRect = text.get_rect()
-        newRect.center = (self.x+(self.width/2),self.y+(self.height/2),)
+        newRect.center = (self.x+(self.width/2),self.y+(self.height/2))
         self.screen.blit(text, newRect)
 
     def clicked(self, mx, my, mouseClick):
