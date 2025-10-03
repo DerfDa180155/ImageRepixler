@@ -76,16 +76,11 @@ class main:
             colorFileName = "colors.txt"
             imageFileName = "testImage.png"
 
-            #self.imagerepixler.loadColors(colorFileName)
-            #self.imagerepixler.loadImage(imageFileName)
-
-            #self.imagerepixler.repixel()
-            #self.imagerepixler.saveImage()
 
             for button in self.buttons:
                 button.hover(mx, my)
                 button.clicked(mx, my, mousePressedUp)
-                button.draw()
+                button.draw(self.windowWidth, self.windowHeight)
 
                 if button.isleftClicked:
                     match button.onClick:

@@ -18,7 +18,7 @@ class Button:
         self.isrightClicked = False
 
 
-    def draw(self):
+    def draw(self, windowWidth, windowHeight):
         pygame.draw.rect(self.screen, self.color, (self.x, self.y, self.width, self.height))
 
         font = pygame.font.Font(pygame.font.get_default_font(), self.displayTextSize)
